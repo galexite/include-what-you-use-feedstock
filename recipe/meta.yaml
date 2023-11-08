@@ -1,5 +1,5 @@
 {% set name = "include-what-you-use" %}
-{% set version = "0.20" %}
+{% set version = "0.21" %}
 {% set llvm_version = "16.*" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 4fe4bd5581ee60bb2bcf1bf40f087a8c5b090d943d0376233638f30f29af0e2e
+  sha256: a472fe8587376d041585c72e5643200f8929899f787725f0ba9e5b3d3820d401
 
 build:
   number: 0
