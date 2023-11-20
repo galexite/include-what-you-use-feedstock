@@ -31,6 +31,9 @@ test:
   commands:
     - {{ name }} --version
     - {{ name }} --help
+    - iwyu_tool.py --help
+    - fix_includes.py --help
+    
 
 about:
   home: https://include-what-you-use.org
