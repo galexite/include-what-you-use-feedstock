@@ -28,6 +28,8 @@ requirements:
     - libclang-cpp {{ llvm_version }}
     - lld {{ llvm_version }}
 test:
+  requires:
+    - python >=3.8
   commands:
     - {{ name }} --version
     - {{ name }} --help
