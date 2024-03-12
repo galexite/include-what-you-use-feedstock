@@ -1,6 +1,6 @@
 {% set name = "include-what-you-use" %}
 {% set version = "0.22" %}
-{% set llvm_version = "17.*" %}
+{% set llvm_version = "18.*" %}
 
 package:
   name: {{ name|lower }}
