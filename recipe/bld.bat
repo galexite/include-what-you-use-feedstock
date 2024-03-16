@@ -1,10 +1,10 @@
 REM TODO(galexite): remove once llvm/llvm-project#83807 has been merged
-echo from pathlib import Path                                                                                     >> _windows_patch.py
-echo import re                                                                                                    >> _windows_patch.py
-echo cmakelists = Path.cwd() / 'CMakeLists.txt'                                                                   >> _windows_patch.py
-echo contents = cmakelists.read_text(encoding='utf-8')                                                            >> _windows_patch.py
-echo contents = re.sub(r'(cmake_minimum_required\([^^\n]+\))', r'\1\ninclude(GNUInstallDirs)', contents, count=1) >> _windows_patch.py
-echo cmakelists.write_text(contents, encoding='utf-8')                                                            >> _windows_patch.py
+echo from pathlib import Path                                                                      >> _windows_patch.py
+echo import re                                                                                     >> _windows_patch.py
+echo cmakelists = Path.cwd() / 'CMakeLists.txt'                                                    >> _windows_patch.py
+echo contents = cmakelists.read_text(encoding='utf-8')                                             >> _windows_patch.py
+echo contents = re.sub(r'(project\([^^\n]+\))', r'\1\ninclude(GNUInstallDirs)', contents, count=1) >> _windows_patch.py
+echo cmakelists.write_text(contents, encoding='utf-8')                                             >> _windows_patch.py
 python _windows_patch.py
 if %ERRORLEVEL% neq 0 exit 1
 del _windows_patch.py
