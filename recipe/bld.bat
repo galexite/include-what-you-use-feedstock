@@ -1,5 +1,14 @@
 REM TODO(galexite): remove once llvm/llvm-project#83807 has been merged
-python %~dp0\_windows_gnuinstalldirs.py
+python -c ^" ^
+from pathlib import Path; ^
+import re; ^
+^
+cmakelists = Path.cwd() / 'CMakeLists.txt'; ^
+contents = cmakelists.read_text(encoding='utf-8'); ^
+contents = re.sub(r'(cmake_minimum_required\([^\n]+\))', r'\1\ninclude(GNUInstallDirs)', contents, count=1); ^
+cmakelists.write_text(contents, encoding='utf-8') ^
+^"
+
 if %ERRORLEVEL% neq 0 exit 1
 
 mkdir build
