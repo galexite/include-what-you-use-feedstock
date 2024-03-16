@@ -1,5 +1,5 @@
 REM TODO(galexite): remove once llvm/llvm-project#83807 has been merged
-python3 %~dp0\_windows_gnuinstalldirs.py
+python %~dp0\_windows_gnuinstalldirs.py
 if %ERRORLEVEL% neq 0 exit 1
 
 mkdir build
