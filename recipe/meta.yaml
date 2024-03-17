@@ -20,6 +20,7 @@ requirements:
     - cmake
     - python
     - ninja
+    - zlib  # [win]
   host:
     - clangdev {{ llvm_version }}
     - llvmdev {{ llvm_version }}
